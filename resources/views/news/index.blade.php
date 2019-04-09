@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300" type="text/css" />
+        <link rel="stylesheet" href="{{ asset('css/grade.css') }}" >
+        <title>MyNews</title>
+    </head>
+    <body>
+
 @extends('layouts.front')
 
 @section('content')
@@ -10,6 +22,8 @@
                         <div class="col-md-6">
                             <div class="caption mx-auto">
                                 <div class="image">
+                                  <a href="{{ action('Admin\NewsController@index') }}">新規作成</a>
+
                                     @if ($headline->image_path)
                                         <img src="{{ asset('storage/image/' . $headline->image_path) }}">
                                     @endif
@@ -57,3 +71,5 @@
     </div>
     </div>
 @endsection
+</body>
+</html>
